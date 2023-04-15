@@ -1,0 +1,17 @@
+.spacer {
+
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.imagedark {
+    background-image: url("./assets/layered_wave_darkmode.svg");
+}
+
+.imagelight {
+    background-image: url("./assets/layered_wave_lightmode.svg")
+}
