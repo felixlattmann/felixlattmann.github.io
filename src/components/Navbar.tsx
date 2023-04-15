@@ -8,7 +8,6 @@ type NavbarProps = {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ colorMode, toggleColorMode }) => {
-  const colorValue = useColorModeValue('#b486b7', '#f66528')
   return (
     <Box
       position="absolute"
