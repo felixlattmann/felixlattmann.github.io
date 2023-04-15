@@ -1,5 +1,6 @@
 import { Box, ColorModeContextType, IconButton, Spacer, Text, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons'
+import ThemeToggleButton from './ThemeToggleButton'
 
 type NavbarProps = {
   colorMode: string
@@ -7,26 +8,19 @@ type NavbarProps = {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ colorMode, toggleColorMode }) => {
-  const colorValue = useColorModeValue('#805ad5', '#f99441')
+  const colorValue = useColorModeValue('#b486b7', '#f66528')
   return (
     <Box
       position="absolute"
       width="100%"
-      height="50px"
-      borderColor={colorValue}
       display="flex"
-      alignItems="center">
-      <Box>
-        <Text pl="10px">Felix Lattmann</Text>
-      </Box>
+      alignItems="center"
+      p="20px"
+    >
+      <Box></Box>
       <Spacer />
-      <Box pr="10px">
-        <IconButton
-          backgroundColor={colorValue}
-          aria-label="Change Color Mode"
-          icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
-          onClick={() => toggleColorMode()}
-        />
+      <Box>
+        <ThemeToggleButton />
       </Box>
     </Box>
   )

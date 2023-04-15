@@ -2,13 +2,14 @@
   "name": "personal_website",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://felixlattmann.github.io/felixlattmann.github.io"
+  "homepage": "https://felixlattmann.github.io/felixlattmann.github.io",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d build"
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.18",

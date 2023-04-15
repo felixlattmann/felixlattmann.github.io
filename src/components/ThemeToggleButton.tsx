@@ -5,26 +5,26 @@ import { AnimatePresence, motion } from 'framer-motion'
 const ThemeToggleButton = () => {
   const { toggleColorMode } = useColorMode()
   const colorValue = useColorModeValue('#b486b7', '#f66528')
-  const reversedColverValue = useColorModeValue('#f66528', '#b486b7')
+  const colorValueHover = useColorModeValue('#9b5f9f', '#dc4709')
 
   return (
     <AnimatePresence
-      mode="wait"
       initial={false}
+      mode="wait"
     >
       <motion.div
-        //style={{ display: 'inline-block' }}
-        key={colorValue}
-        initial={{ x: 20, opacity: 1 }}
+        style={{ display: 'inline-block' }}
+        key={useColorModeValue('lightsetting', 'darksetting')}
+        initial={{ x: 20, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        exit={{ x: -20, opacity: 1 }}
-        transition={{ duration: 1 }}
+        exit={{ x: 20, opacity: 0 }}
       >
         <IconButton
           aria-label='"Toggle theme'
-          colorScheme={colorValue}
+          backgroundColor={colorValue}
           icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
           onClick={toggleColorMode}
+          _hover={{ backgroundColor: colorValueHover }}
         ></IconButton>
       </motion.div>
     </AnimatePresence>
